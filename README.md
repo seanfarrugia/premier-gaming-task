@@ -18,18 +18,20 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 Clone the repository and install dependencies:
 
 ```bash
-git clone https://github.com/your-username/your-project.git
-cd your-project
+git clone https://github.com/seanfarrugia/premier-gaming-task.git
+cd premier-gaming-task
 npm install
 ```
+---
 
-## 🏗️ Running the Development Server
+## 🚧 Running the Development Server
 
 Start the local development server:
 
 ```bash
 npm run dev
 ```
+---
 
 ## 🏗️ Production
 
