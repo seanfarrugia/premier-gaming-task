@@ -1,7 +1,7 @@
 'use client'
 import React, {useEffect, useState, useRef} from 'react';
 import { Game } from '@/app/db/game';
-import { IoInformationCircleOutline } from "react-icons/io5";
+import { IoInformationCircleOutline, IoAppsSharp } from "react-icons/io5";
 
 import { GameItem } from '@/app/components/atoms/game-item';
 import { Header } from '@/app/components/organisms/header';
@@ -32,16 +32,23 @@ export const GamesGrid: React.FC = () => {
                 {gamesList.length 
                 ?
                     filteredGames.length 
-                    ? <ul className='grid gap-4 mt-4 grid-cols-1 md:grid-cols-2 xl:grid-cols-3'>
-                        {filteredGames.map((game: Game) => {
-                            return (
-                                <GameItem {...game} key={game.id} />
-                            )
-                        })}
-                    </ul>
-                    : <p className='text-center bg-white rounded-3xl p-8 font-semibold text-neutral-700 flex items-center gap-2'>
-                        <IoInformationCircleOutline className='inline-block' size={34} />
-                        No Games Found</p>
+                    ?   <>
+                            <span className='text-neutral-700 bg-white rounded-xl px-4 py-2 inline-flex gap-2 shadow-sm items-center font-semibold'>
+                                <IoAppsSharp className='inline-block' size={24} />
+                                {filteredGames.length } Results
+                            </span>
+                            <ul className='grid gap-4 mt-4 grid-cols-1 md:grid-cols-2 xl:grid-cols-3'>
+                                {filteredGames.map((game: Game) => {
+                                    return (
+                                        <GameItem {...game} key={game.id} />
+                                    )
+                                })}
+                            </ul>
+                        </>
+                    :   <p className='text-center bg-white rounded-3xl p-8 font-semibold text-neutral-700 flex items-center gap-2'>
+                            <IoInformationCircleOutline className='inline-block' size={34} />
+                            No Games Found
+                        </p>
                 : isInitialized.current ? <p className='text-center bg-white rounded-3xl p-8 font-semibold text-neutral-700'>No games are currently available</p> : <GameSkeleton />}
             </div>
         </>

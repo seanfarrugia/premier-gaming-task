@@ -11,7 +11,7 @@ export const GameItem: React.FC<Game> = game => {
             <div className="relative">
                 <Link href={`/games/${game.slug}`} className="group rounded-4xl">
                     <Image
-                        className="object-cover w-full h-96 rounded-4xl opacity-90 group-hover:scale-[98%] transition duration-300"
+                        className="object-cover w-full h-96 rounded-4xl opacity-90 group-hover:scale-[98%] transition duration-300 group-hover:shadow-lg"
                         src={`https:${game.game_background}`}
                         alt={`${game.title} thumbnail`}
                         width={150}
