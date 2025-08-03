@@ -39,7 +39,7 @@ export default async function GamePage({ params }: GamePageProps) {
               dangerouslySetInnerHTML={{ __html: game.content }}
             />
           ) : (
-            <p className="text-neutral-400">No content available.</p>
+            <p className="text-neutral-400"></p>
           )}
           <h3 className='text-xl font-semibold text-neutral-700 my-4'>Device Support</h3>
           <div>
